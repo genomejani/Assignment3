@@ -1,0 +1,136 @@
+#1. Write a program to read Celsius temperature and print equivalent Fahrenheit
+temperate on screen using R.
+
+tempD = as.integer(readline(prompt = "Input the temperature in degree to convert in fahrenheit "))
+tempF = (tempD * 9/5) + 32 
+print(tempF)
+
+##############
+#2. Read radius of the circle from user and find the area and perimeter of it using R.
+
+R = as.numeric(readline(prompt = "Input the radius of Circle:"))
+Area = 22/7 * R**2
+Perimeter = 2 * 22/7 * R
+sprintf("For Radius: %.2f the area of circle is: %.2f and perimeter is: %.2f" ,R, Area, Perimeter)
+
+##############
+#3 Read the amount and percentage of interest from the keyboard and find final
+amount after adding interest in original amount using R
+
+Amt = as.numeric(readline(prompt = "Enter Amount:"))
+Per = as.numeric(readline(prompt = "Enter Interset Percentage:"))               
+Total = Amt + (Amt * Per/100)
+sprintf("Total Amount is %.2f", Total)
+
+##############
+#4 Write a program to read distance value in meters and convert it into centimeters,
+inches, and yards using R.
+
+Dist = as.numeric(readline(prompt = "Input the distance in meter:"))
+Cent = Dist * 100
+inch = Dist * 39.37
+Yard = Dist *  1.0936
+sprintf("Distance in Centimeter: %.2f  Distance in inch:%.2f Distance in Yard:%.2f" , Cent,inch, Yard)
+
+##############
+#5Write a Python program to calculate profit or loss. Input is selling cost and actual
+cost of a product using R.
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) < 2) {
+  stop("Please provide two numeric arguments:  Buy and Sell price .")
+}
+Acost <- as.numeric(args[1])
+Scost <- as.numeric(args[2])
+
+Tover <- Scost-Acost
+if(Tover > 0){
+    sprintf("Profit is: %.2f" , Tover)
+}else if(Tover < 0){
+    sprintf("Loss is:%.2f" , abs(Tover))
+}    
+################
+
+#6Write a program to input basic salary and find output of gross salary using
+following:
+$$DA = 75% of basic
+$$HRA = 20% of basic
+$$Conditions:
+$$Basic < 10000 : gross = da + basic
+$$Basic >= 10000 and < 20000 : gross = da + basic + 50% of hra
+$$Basic >= 20000 : gross = basic + da + hra
+
+
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) < 1) {
+  stop("Please provide one numeric arguments: Basic salary.")
+}
+Sal = as.numeric(args[1])
+DA = 75
+HRA = 20
+if (Sal < 10000){
+    gross= .75*Sal + Sal
+} else if (Sal < 10000){
+    gross= 0.75 * Sal + Sal
+} else if (Sal  >= 10000 && Sal < 200000){
+    gross= 0.75* Sal + Sal + 0.1 * Sal
+} else if (Sal  >= 20000 ){
+    gross= 0.75 * Sal + Sal + 0.2 * Sal
+}
+sprintf("Gross Salary is:%.2f" , gross)
+
+
+###########################
+#7 Write a program to read a number from user and find the factorial of the number
+using R.
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) < 1) {
+  stop("Please provide one numeric arguments: Number for factorial computation")
+}
+x = as.numeric(args[1])
+y = factorial(x)
+sprintf("Factorial of %.2f is: %.2f" , x , y)
+
+##########################
+
+#8 Write a program to read num1 and num2 from keyboard and find addition of all
+number between that range using R.
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) < 2) {
+  stop("Please provide two numeric to find addition of all number between that range")
+}
+num3 <- 0
+num1 <- as.numeric(args[1])
+num2 <- as.numeric(args[2])
+for (x in num1:num2) {
+  num3 <- num3 +x
+}
+print(num3)
+
+#############################
+
+#9 Write a program to read a number from user. Create and use a user defined
+function to check whether it is odd or even using R?
+
+args <- commandArgs(trailingOnly = TRUE)
+
+if (length(args) < 1) {
+  stop("Please provide one numeric arguments: Number for odd/Even checking")
+}
+
+oddeven <- function(num) {
+if (num%%2 != 0){
+print ("odd")
+} else if (num%%2 == 0){
+print ("even")
+}
+}
+num1 =  as.numeric(args[1])
+oddeven(num1)
